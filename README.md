@@ -1,82 +1,91 @@
 # 📚 Streamlit RAG Chat App (FAISS + HuggingFace + LM Studio)
 
-Aplikasi **RAG (Retrieval-Augmented Generation)** berbasis **Streamlit** yang memungkinkan Anda melakukan chat dengan dokumen PDF menggunakan:
+A **Retrieval-Augmented Generation (RAG)** application built with
+**Streamlit**, allowing you to chat with PDF documents using:
 
-- **PyPDFLoader** → untuk load & chunking dokumen PDF  
-- **HuggingFace Embeddings (bge-base-en-v1.5)**  
-- **FAISS Vector Store**  
-- **LM Studio (local LLM server)** → sebagai model bahasa  
-- **LangChain LCEL** → untuk pipeline RAG modular  
-- **Excel Export** → menyimpan riwayat percakapan  
+-   **PyPDFLoader** for PDF loading and chunking\
+-   **HuggingFace Embeddings (bge-base-en-v1.5)**\
+-   **FAISS Vector Store**\
+-   **LM Studio (local LLM server)**\
+-   **LangChain LCEL** for modular RAG pipeline\
+-   **Excel Export** for saving chat history
 
-Aplikasi ini sangat cocok untuk membuat chatbot knowledge base lokal sepenuhnya tanpa API berbayar.
+This app is ideal for building a fully local knowledge-base chatbot
+without paid API services.
 
----
+------------------------------------------------------------------------
 
-## 🚀 Fitur Utama
+## 🚀 Key Features
 
 ### 🔍 Retrieval-Augmented Generation (RAG)
-- Query user akan diambil konteks relevan dari dokumen PDF.
-- Kemudian dijawab menggunakan model LLM dari LM Studio.
 
-### 📁 Chat History Tracking
-- Semua chat otomatis dicatat ke DataFrame.
-- Tracking:
-  - chat_id
-  - created_at
-  - query
-  - response_text
-  - run_time (detik)
+-   User queries retrieve relevant context from PDF chunks.
+-   Responses generated using a local model served via LM Studio.
+
+### 💬 Chat History Tracking
+
+All chats are automatically saved with: - chat_id\
+- created_at\
+- query\
+- response_text\
+- run_time (seconds)
 
 ### 📥 Export Chat History
-- Riwayat chat dapat **di-download dalam format Excel (.xlsx)**.
+
+-   Chat history can be downloaded as **Excel (.xlsx)**.
 
 ### 🧠 Local Embeddings + Local LLM
-- Embeddings menggunakan HuggingFace BGE.
-- LLM berjalan di **http://localhost:1234/v1** (LM Studio).
 
----
+-   Embeddings powered by HuggingFace BGE models.
+-   LLM runs on **http://localhost:1234/v1** via LM Studio.
 
-## 📦 Instalasi
+------------------------------------------------------------------------
 
-### 1️⃣ Clone repository
-```bash
+## 📦 Installation
+
+### 1️⃣ Clone the repository
+
+``` bash
 git clone <repo-url>
 cd <folder>
 ```
 
-### 2️⃣ Buat environment (opsional tapi direkomendasikan)
-```bash
+### 2️⃣ Create environment (optional but recommended)
+
+``` bash
 conda create -n rag_streamlit python=3.10 -y
 conda activate rag_streamlit
 ```
 
 ### 3️⃣ Install dependencies
-```bash
+
+``` bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Pastikan LM Studio sudah berjalan
+### 4️⃣ Ensure LM Studio is running
 
-* Open LM Studio
-* Load model, misalnya: qwen/qwen3-vl-4b (atau model lain)
-* Start server:
-```bash
-Server URL: http://localhost:1234/v1
-```
+Steps: 1. Open LM Studio\
+2. Load any supported model (e.g., `qwen/qwen3-vl-4b`)\
+3. Start the local server:
 
-### ▶️ Menjalankan Aplikasi
-```bash
+    Server URL: http://localhost:1234/v1
+
+### ▶️ Run the App
+
+``` bash
 streamlit run app.py
 ```
 
-Aplikasi akan tampil pada
-```bash
-http://localhost:8501
-```
+Access via:
 
-### 📁 Struktur Direktori
-```kotlin
+    http://localhost:8501
+
+------------------------------------------------------------------------
+
+## 📁 Directory Structure
+
+``` text
 project/
 │── app.py
 │── data/
@@ -85,26 +94,35 @@ project/
 └── README.md
 ```
 
-### 🛠 Teknologi yang Digunakan
+------------------------------------------------------------------------
 
-| Komponen        | Library                           |
-| --------------- | --------------------------------- |
-| PDF Loader      | langchain_community (PyPDFLoader) |
-| Embeddings      | HuggingFaceEmbeddings             |
-| Vector Database | FAISS                             |
-| LLM             | OpenAI-compatible API (LM Studio) |
-| UI              | Streamlit                         |
-| Export Excel    | pandas + xlsxwriter               |
+## 🛠 Tech Stack
 
-### 📝 Catatan Penting
-* Model LM Studio wajib mendukung OpenAI API format.
-* Embedding model dapat diganti sesuai kebutuhan.
-* PDF bisa diganti dengan dokumen lain tinggal ubah path.
+  Component         Library
+  ----------------- -----------------------------------
+  PDF Loader        langchain_community (PyPDFLoader)
+  Embeddings        HuggingFaceEmbeddings
+  Vector Database   FAISS
+  LLM               LM Studio (OpenAI-compatible API)
+  UI                Streamlit
+  Excel Export      pandas + xlsxwriter
 
-### 📄 Lisensi
+------------------------------------------------------------------------
 
-MIT License – bebas digunakan untuk edukasi & produksi.
+## 📝 Notes
 
-### 🙌 Kontribusi
+-   LM Studio model must support OpenAI API compatibility.
+-   Embeddings can be swapped depending on needs.
+-   PDF path can be modified depending on your dataset.
 
-Pull request dipersilakan!
+------------------------------------------------------------------------
+
+## 📄 License
+
+MIT License -- free for educational and production use.
+
+------------------------------------------------------------------------
+
+## 🙌 Contributions
+
+Pull requests are welcome!
