@@ -3,11 +3,11 @@
 A **Retrieval-Augmented Generation (RAG)** application built with
 **Streamlit**, allowing you to chat with PDF documents using:
 
--   **PyPDFLoader** for PDF loading and chunking\
--   **HuggingFace Embeddings (bge-base-en-v1.5)**\
--   **FAISS Vector Store**\
--   **LM Studio (local LLM server)**\
--   **LangChain LCEL** for modular RAG pipeline\
+-   **PyPDFLoader** for PDF loading and chunking
+-   **HuggingFace Embeddings (bge-base-en-v1.5)**
+-   **FAISS Vector Store**
+-   **LM Studio (local LLM server)**
+-   **LangChain LCEL** for modular RAG pipeline
 -   **Excel Export** for saving chat history
 
 This app is ideal for building a fully local knowledge-base chatbot
@@ -24,10 +24,11 @@ without paid API services.
 
 ### 💬 Chat History Tracking
 
-All chats are automatically saved with: - chat_id\
-- created_at\
-- query\
-- response_text\
+All chats are automatically saved with: 
+- chat_id
+- created_at
+- query
+- response_text
 - run_time (seconds)
 
 ### 📥 Export Chat History
