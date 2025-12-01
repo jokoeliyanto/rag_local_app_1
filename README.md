@@ -1,4 +1,6 @@
-# 📚 Streamlit RAG Chat App (FAISS + HuggingFace + LM Studio)
+# 📚 Streamlit RAG Chat App 
+
+![Demo](local_rag_1.gif)
 
 A **Retrieval-Augmented Generation (RAG)** application built with
 **Streamlit**, allowing you to chat with PDF documents using:
